@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TelaCadastro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C11212"
+    tools:context=".Cadastro">
+
+    <EditText
+        android:id="@+id/CampoApelido"
+        android:layout_width="228dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:maxLength="4"
+        app:layout_constraintBottom_toTopOf="@+id/BotaoSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Apelido"
+        app:layout_constraintTop_toBottomOf="@+id/CampoNome"
+        app:layout_constraintVertical_bias="0.692" />
+
+    <EditText
+        android:id="@+id/CampoBairro"
+        android:layout_width="228dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/CampoApelido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CampoNome"
+        app:layout_constraintVertical_bias="0.554" />
+
+    <TextView
+        android:id="@+id/txtSaudacoes"
+        android:layout_width="150dp"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:text="Seja bem vindo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/BotaoSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.309" />
+
+    <TextView
+        android:id="@+id/txtInstrucao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informe alguns dados importantes "
+        app:layout_constraintBottom_toTopOf="@+id/BotaoSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSaudacoes"
+        app:layout_constraintVertical_bias="0.199" />
+
+    <EditText
+        android:id="@+id/CampoNome"
+        android:layout_width="229dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/BotaoSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInstrucao"
+        app:layout_constraintVertical_bias="0.278" />
+
+    <TextView
+        android:id="@+id/Nome_Usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome: "
+        app:layout_constraintBottom_toTopOf="@+id/CampoBairrotxt"
+        app:layout_constraintEnd_toStartOf="@+id/CampoNome"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInstrucao"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <TextView
+        android:id="@+id/CampoBairrotxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bairro: "
+        app:layout_constraintBottom_toTopOf="@+id/Apelido"
+        app:layout_constraintEnd_toStartOf="@+id/CampoBairro"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CampoNome"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <TextView
+        android:id="@+id/Apelido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:text="Apelido: "
+        app:layout_constraintBottom_toTopOf="@+id/BotaoSalvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CampoBairro"
+        app:layout_constraintVertical_bias="0.451" />
+
+    <Button
+        android:id="@+id/BotaoSalvar"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="500dp"
+        android:layout_height="54dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="155dp"
+        android:layout_marginBottom="64dp"
+        android:text="                    Confirma"
+        android:textColor="#000000"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:backgroundTint="#E60505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.997"
+        app:layout_constraintStart_toEndOf="@+id/Apelido"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.965" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="161dp"
+        android:layout_height="117dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/txtSaudacoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_size_invert"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
