@@ -1,5 +1,6 @@
 package com.example.chamouchegou;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -33,7 +33,8 @@ public class ListaBancoActivity extends AppCompatActivity {
         mListaBanco = (ListView) findViewById(R.id.ListaBanco);
         listBanco = new ArrayList<>();
 
-        //adaptadorLista = new AdaptadorLista(this, );
+
+
 
         mBancoHelper = new BancoHelper(this);
         Cursor result = mBancoHelper.getData();
@@ -42,8 +43,9 @@ public class ListaBancoActivity extends AppCompatActivity {
         mListaBanco.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String text = mListaBanco.getItemAtPosition(position).toString();
-                Toast.makeText(ListaBancoActivity.this, "", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ListaBancoActivity.this, ListaDeCompra.class);
+                startActivity(intent);
+
             }
         });
 
@@ -57,13 +59,11 @@ public class ListaBancoActivity extends AppCompatActivity {
             Toast.makeText(this, "Nenhum dado para exibir", Toast.LENGTH_LONG).show();
         } else {
             while (cursor.moveToNext()) {
-                // O que tem na posicao 1, 2 e 3 ? nome, bairro e apelido,
                 listBanco.add(new EntidadeLista(cursor.getString(1), cursor.getString(2), cursor.getString(3)));
 
             }
 
-            // COmo eu importo o layout ?ele nao ta aprecendo la, faz assim, copia o que ta nele e joga no simple list
-            // Deixe de maluquice kkk, funciona boto fér kkkk
+
             adapter = new ArrayAdapter(this, R.layout.single_lista, R.id.item_nome, listBanco) {
                 @Override
                 public View getView(int position, View convertView, ViewGroup parent) {
@@ -72,9 +72,6 @@ public class ListaBancoActivity extends AppCompatActivity {
                     TextView textNome = (TextView) view.findViewById(R.id.item_nome);
                     TextView textBairro = (TextView) view.findViewById(R.id.item_bairro);
                     TextView textApelido = (TextView) view.findViewById(R.id.item_apelido);
-// DEUS, funcionou,aulas, kkkk boaa - Vou tentar jogar no seu layout lá, brocou. ta lindo ja, pegando o layout la e parece que parou de duplicar
-                    // Tu fez oq ai q ta dando erro de comprimento ? foi tava cadastrando, duplicando ainda. Pelo console, ele registrou dois itens msm
-                    // Olha lá o numero 6, tava em 4
                     textNome.setText(listBanco.get(position).getNome());
                     textBairro.setText(listBanco.get(position).getBairro());
                     textApelido.setText(listBanco.get(position).getApelido());
@@ -84,11 +81,8 @@ public class ListaBancoActivity extends AppCompatActivity {
             };
 
             mListaBanco.setAdapter(adapter);
-            // Testa ai
         }
-        /**
-         * Onde vc ta cadastrando aq ? la em banco Helper
-         */
+
         Log.d("Lista de Entidades", String.valueOf(listBanco.size()));
     }
 

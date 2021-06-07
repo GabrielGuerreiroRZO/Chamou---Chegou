@@ -32,8 +32,6 @@ public class BancoHelper extends SQLiteOpenHelper {
 
     }
 
-    // A gente subiu o projeto errado se pa kkkkkkkkk, tem 4 chamou chegou tambem
-    // Vamo resetar dnv se pa. o codigo o projeot no git
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
